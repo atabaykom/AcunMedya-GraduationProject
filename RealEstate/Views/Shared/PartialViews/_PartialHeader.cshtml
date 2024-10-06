@@ -1,0 +1,45 @@
+﻿<header id="fh5co-header-section">
+    <div class="container" id="fh5co-header-section">
+        <h1 id="fh5co-logo" class="pull-left"><a href="/Home/Index"><img src="/img/logo.png"></a></h1>
+        <nav id="fh5co-menu-wrap" role="navigation">
+            <ul class="sf-menu" id="fh5co-primary-menu">
+                <li class="active">
+                    <a href="/Home/Index">Ana Sayfa</a>
+                </li>
+                @{
+                    var currentRequest = ViewContext.HttpContext.Request;
+                    var UserID = currentRequest.Cookies["MANREF"] != null ? int.Parse(currentRequest.Cookies["MANREF"]) : 0;
+                    var UserNameCookie = currentRequest.Cookies["MANNAME"] != null ? currentRequest.Cookies["MANNAME"] : null;
+                    var UserRoleCookie = currentRequest.Cookies["MANROLE"] != null ? currentRequest.Cookies["MANROLE"] : null;
+                    if (UserNameCookie != null)
+                    {
+                        <li>
+                            <a href="#" class="fh5co-sub-down" style="color:ghostwhite">@UserNameCookie</a>
+                            <ul class="fh5co-sub-menu">
+                                <li><a href="/AccountSummary/OverView">Bana Özel Özet</a></li>
+                                <li><a href="/AccountSummary/OverView/AccountAdList">İlanlarım</a></li>
+                                <li><a href="/AccountSummary/OverView/AccountFavoritesList">Favorilerim</a></li>
+                                <li><a href="/AccountSummary/OverView">Hesabım</a></li>
+                                <li><a href="/AccountSummary/accountmessage/messagebox">Mesajlarım</a></li>
+                                <hr />
+                                <li><a href="/Account/Logout">Çıkış Yap</a></li>
+                                @if(UserRoleCookie=="Admin")
+                                {
+                                    <hr />
+                                    <li><a href="/Admin/Home">Admin Paneli</a></li>
+                                }
+
+                            </ul>
+                        </li>
+                        <li><a href="/Advertisement/addnewad" style="color:ghostwhite">İlan Ver!</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Account/Login">Giriş Yap</a></li>
+                        <li><a href="/Account/Register">Hesap Aç</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,312 @@
+﻿@model List<RealEstate.ViewModels.ContentViewModel>
+@{
+    ViewData["Title"] = "AccountFavoritesList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .strike-text {
+        color: red;
+        text-decoration: line-through
+    }
+
+    .product-image {
+        width: 100%
+    }
+
+    .dot {
+        height: 7px;
+        width: 7px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 3px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block
+    }
+
+    .spec-1 {
+        color: #938787;
+        font-size: 15px
+    }
+
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" id="activeAdList">Aktif İlanlar</a>
+                <a href="#" class="list-group-item list-group-item-action" id="passiveAdList">Pasif İlanlar</a>
+            </div>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <div id="content">
+                <div id="activeAds">
+                    @foreach (var item in Model.Where(x => x.IsActive == true))
+                    {
+                        <div class="row p-2 bg-white border rounded mt-4">
+                            <div class="col-md-3 mt-1">
+                                <img class="img-fluid img-responsive rounded product-image" src="@item.firmDocs.ToList().Select(x=>x.URL).FirstOrDefault()">
+                            </div>
+                            <div class="col-md-7 mt-1">
+                                <h3>@item.Title</h3>
+                                <p class="fw-semibold  mt-4 text-truncate" style="white-space: pre-wrap;">@item.Description</p>
+                                <ul class="d-flex align-items-end " style="list-style-type: none; padding-left: 0;">
+                                    <li class="mt-5">
+                                        <div class="mdi mdi-seat-individual-suite " style="font-size: 15px;"><span class="p-1">Oda Sayısı <b>@item.NumberOfRooms</b></span></div>
+                                    </li>
+                                    <li class="mt-5">
+                                        <div class="mdi mdi-account-card-details" style="font-size: 15px;"><span class="p-1">Kimden <b>@item.ContentFrom</b></span></div>
+                                    </li>
+                                    <li class="mt-5">
+                                        <div class="mdi mdi-home" style="font-size: 15px;"><span class="p-1">Bina Yaşı <b>@item.AgeOfBuilding</b></span></div>
+                                    </li>
+                                    <li class="mt-5">
+                                        <div class="mdi mdi-vector-square " style="font-size: 15px;"><span class="p-1">Net M2 <b>@item.NetSquareMeters</b></span></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="align-items-center align-content-center col-md-2 border-left mt-1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <h4 class="mr-1">@item.Price</h4>
+                                </div>
+                                <h6 class="text-success">@item.Adress</h6>
+                                <div class="d-flex flex-column mt-4">
+                                    <a class="btn btn-primary" href="/Advertisement/GetAdDetail/@item.ID">Detaylar</a>
+                                    <a class="btn btn-danger" href="/AccountSummary/OverView/RemoveFavorite/@item.ID">Favorilerden Çıkar</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="col-md-12 mt-4">
+                        <ul class="pagination justify-content-center" id="activePagination">
+                            <li class="page-item disabled" id="activePrevButton">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a>
+                            </li>
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item" id="activeNextButton">
+                                <a class="page-link" href="#">İleri</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="passiveAds">
+                        @foreach (var item in Model.Where(x => x.IsActive == false))
+                        {
+                            <div class="row p-2 bg-white border rounded mt-4">
+                                <div class="col-md-3 mt-1">
+                                    <img class="img-fluid img-responsive rounded product-image" src="@item.firmDocs.ToList().Select(x=>x.URL).FirstOrDefault()">
+                                </div>
+                                <div class="col-md-7 mt-1">
+                                    <h3>@item.Title</h3>
+                                    <p class="fw-semibold  mt-4 text-truncate" style="white-space: pre-wrap;">@item.Description</p>
+                                    <ul class="d-flex align-items-end " style="list-style-type: none; padding-left: 0;">
+                                        <li class="mt-5">
+                                            <div class="mdi mdi-seat-individual-suite " style="font-size: 15px;"><span class="p-1">Oda Sayısı <b>@item.NumberOfRooms</b></span></div>
+                                        </li>
+                                        <li class="mt-5">
+                                            <div class="mdi mdi-account-card-details" style="font-size: 15px;"><span class="p-1">Kimden <b>@item.ContentFrom</b></span></div>
+                                        </li>
+                                        <li class="mt-5">
+                                            <div class="mdi mdi-home" style="font-size: 15px;"><span class="p-1">Bina Yaşı <b>@item.AgeOfBuilding</b></span></div>
+                                        </li>
+                                        <li class="mt-5">
+                                            <div class="mdi mdi-vector-square " style="font-size: 15px;"><span class="p-1">Net M2 <b>@item.NetSquareMeters</b></span></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="align-items-center align-content-center col-md-2 border-left mt-1">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <h4 class="mr-1">@item.Price</h4>
+                                    </div>
+                                    <h6 class="text-success">@item.Adress</h6>
+                                    <div class="d-flex flex-column mt-4">
+                                        <button href="/Advertisement/GetAdDetail/@item.ID" class="btn btn-danger" type="button">detaylar</button>
+                                        <a class="btn btn-danger" href="/AccountSummary/OverView/RemoveFavorite/@item.ID">Favorilerden Çıkar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <div class="col-md-12 mt-4">
+                            <ul class="pagination justify-content-center" id="passivePagination">
+                                <li class="page-item disabled" id="passivePrevButton">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a>
+                                </li>
+                                <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item" id="passiveNextButton">
+                                    <a class="page-link" href="#">İleri</a>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#activeAdList").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                $("#activeAds").show();
+                $("#passiveAds").hide();
+            });
+
+            $("#passiveAdList").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                $("#activeAds").hide();
+                $("#passiveAds").show();
+            });
+        });
+        $(document).ready(function () {
+            $("#passiveAds").hide();
+            var itemsPerPage = 5;
+            var totalActiveItems = $('#activeAds .row').length;
+            var totalPassiveItems = $('#passiveAds .row').length;
+            var totalActivePages = Math.ceil(totalActiveItems / itemsPerPage);
+            var totalPassivePages = Math.ceil(totalPassiveItems / itemsPerPage);
+
+            function loadActivePage(page) {
+                var startIndex = (page - 1) * itemsPerPage;
+                var endIndex = Math.min(startIndex + itemsPerPage, totalActiveItems);
+                $('#activeAds .row').hide();
+                $('#activeAds .row').slice(startIndex, endIndex).show();
+            }
+
+            function loadPassivePage(page) {
+                var startIndex = (page - 1) * itemsPerPage;
+                var endIndex = Math.min(startIndex + itemsPerPage, totalPassiveItems);
+                $('#passiveAds .row').hide();
+                $('#passiveAds .row').slice(startIndex, endIndex).show();
+            }
+
+            function updatePaginationForActiveAds() {
+                $('#activePagination').empty();
+
+                var prevButton = '<li class="page-item disabled" id="activePrevButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+                if ($('#activePagination .page-item.active').find('.page-link').text() === '1') {
+                    prevButton = '<li class="page-item disabled" id="activePrevButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+                }
+                $('#activePagination').append(prevButton);
+
+                for (var i = 1; i <= totalActivePages; i++) {
+                    var liClass = i === 1 ? 'page-item active' : 'page-item';
+                    var li = $('<li class="' + liClass + '"><a class="page-link" href="#">' + i + '</a></li>');
+                    $('#activePagination').append(li);
+                }
+
+                var nextButton = '<li class="page-item disabled" id="activeNextButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+                if ($('#activePagination .page-item.active').find('.page-link').text() === totalActivePages.toString()) {
+                    nextButton = '<li class="page-item disabled" id="activeNextButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+                }
+                $('#activePagination').append(nextButton);
+            }
+
+            function updatePaginationForPassiveAds() {
+                $('#passivePagination').empty();
+
+                var prevButton = '<li class="page-item disabled" id="passivePrevButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+                if ($('#passivePagination .page-item.active').find('.page-link').text() === '1') {
+                    prevButton = '<li class="page-item disabled" id="passivePrevButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+                }
+                $('#passivePagination').append(prevButton);
+
+                for (var i = 1; i <= totalPassivePages; i++) {
+                    var liClass = i === 1 ? 'page-item active' : 'page-item';
+                    var li = $('<li class="' + liClass + '"><a class="page-link" href="#">' + i + '</a></li>');
+                    $('#passivePagination').append(li);
+                }
+
+                var nextButton = '<li class="page-item disabled" id="passiveNextButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+                if ($('#passivePagination .page-item.active').find('.page-link').text() === totalPassivePages.toString()) {
+                    nextButton = '<li class="page-item disabled" id="passiveNextButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+                }
+                $('#passivePagination').append(nextButton);
+            }
+
+            updatePaginationForActiveAds();
+            updatePaginationForPassiveAds();
+
+            $('#activePagination').on('click', '.page-item:not(#activePrevButton, #activeNextButton) a', function (e) {
+                e.preventDefault();
+                var page = parseInt($(this).text());
+                loadActivePage(page);
+                $('#activePagination .page-item').removeClass('active');
+                $(this).parent().addClass('active');
+            });
+
+            $('#passivePagination').on('click', '.page-item:not(#passivePrevButton, #passiveNextButton) a', function (e) {
+                e.preventDefault();
+                var page = parseInt($(this).text());
+                loadPassivePage(page);
+                $('#passivePagination .page-item').removeClass('active');
+                $(this).parent().addClass('active');
+            });
+
+            $('#activeNextButton').on('click', function (e) {
+                e.preventDefault();
+                var currentPage = parseInt($('#activePagination .page-item.active').find('.page-link').text());
+                if (currentPage < totalActivePages) {
+                    loadActivePage(currentPage + 1);
+                    $('#activePagination .page-item.active').next().addClass('active');
+                    $('#activePagination .page-item.active').prev().removeClass('active');
+                }
+            });
+
+            $('#activePrevButton').on('click', function (e) {
+                e.preventDefault();
+                var currentPage = parseInt($('#activePagination .page-item.active').find('.page-link').text());
+                if (currentPage > 1) {
+                    loadActivePage(currentPage - 1);
+                    $('#activePagination .page-item.active').prev().addClass('active');
+                    $('#activePagination .page-item.active').next().removeClass('active');
+                }
+            });
+
+            $('#passiveNextButton').on('click', function (e) {
+                e.preventDefault();
+                var currentPage = parseInt($('#passivePagination .page-item.active').find('.page-link').text());
+                if (currentPage < totalPassivePages) {
+                    loadPassivePage(currentPage + 1);
+                    $('#passivePagination .page-item.active').next().addClass('active');
+                    $('#passivePagination .page-item.active').prev().removeClass('active');
+                }
+            });
+
+            $('#passivePrevButton').on('click', function (e) {
+                e.preventDefault();
+                var currentPage = parseInt($('#passivePagination .page-item.active').find('.page-link').text());
+                if (currentPage > 1) {
+                    loadPassivePage(currentPage - 1);
+                    $('#passivePagination .page-item.active').prev().addClass('active');
+                    $('#passivePagination .page-item.active').next().removeClass('active');
+                }
+            });
+            loadActivePage(1);
+            loadPassivePage(1);
+        });
+    </script>
+}
+

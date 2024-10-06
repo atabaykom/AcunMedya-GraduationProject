@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .cardCategory {
+        background-size: cover;
+        background-position: center;
+        margin: 25px;
+        width: 80%;
+        height: 100px;
+        text-align: center;
+        display: inline-block;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left:100px;
+        margin-block-start:50px;
+        margin-top:80px;
+        border-radius: 50px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .btnCategory {
+        margin-top:15px;
+        width: 50%;
+        height: 25px;
+        border-radius: 100px;
+    }
+</style>
+
+<div class="row" style="margin-top:200px">
+<div class="col-md-6">
+    <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+        <div class="card-body">
+            <h2 class="card-title"></h2>
+            <a href="/Admin/Home/GetAllContent" class="btn btnCategory btn-primary">Bütün İlanları Göster</a>
+        </div>
+    </div>
+</div>
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllUser" class="btn btnCategory btn-primary">Bütün Üyeleri Göster</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllCategories" class="btn btnCategory btn-primary">Bütün Kategorileri Göster</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllRole" class="btn btnCategory btn-primary">Bütün Rolleri Göster</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllInComingMessage" class="btn btnCategory btn-primary">Bütün Gelen Mesajları Göster</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllOutGoingMessage" class="btn btnCategory btn-primary">Bütün Giden Mesajları Göster</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="cardCategory" style="background-image: url('https://img.tamindir.com/2021/06/426141/windows-11-masaustu-arka-plan-gorselleri.jpg');">
+            <div class="card-body">
+                <h2 class="card-title"></h2>
+                <a href="/Admin/Home/GetAllMessageLines" class="btn btnCategory btn-primary">Bütün Mesajları Göster</a>
+            </div>
+        </div>
+    </div>
+</div>

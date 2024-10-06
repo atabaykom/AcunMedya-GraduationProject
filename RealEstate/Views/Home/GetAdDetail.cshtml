@@ -1,0 +1,111 @@
+﻿@model List<ContentViewModel>
+@{
+    ViewData["Title"] = "GetAdDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .list-group-item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .description {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .carousel-item {
+        text-align: center;
+    }
+
+    .carousel-inner {
+        width: 100%;
+    }
+
+    .btnCategory {
+        margin-top: 60px;
+        width: 100%;
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div id="carouselExample" class="carousel slide col-md-4 offset-md-2" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach (var img in item.firmDocs)
+                {
+                    <div class="carousel-item @(img == item.firmDocs.First() ? "active" : "")">
+                        <img src="@img.URL" class="d-block w-100">
+                    </div>
+                }
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+  
+    <div class="col-md-3 offset-md-1">
+        <h3 class="text-success">
+                @item.Price ₺
+            <small class="text-muted">@(item.Adress.Length > 20 ? item.Adress.Substring(0, 20) : item.Adress)</small>
+        </h3>
+        <ul class="list-group">
+            <li class="list-group-item">İlan Tarihi<b class="ml-5">@item.CreatedDate.ToShortDateString()</b></li>
+            <li class="list-group-item">M2 Net<b class="ml-5">@item.NetSquareMeters</b></li>
+            <li class="list-group-item">M2 Brüt<b class="ml-5">@item.GrossSquareMeters</b></li>
+            <li class="list-group-item">Oda Sayısı<b class="ml-5">@item.NumberOfRooms</b></li>
+            <li class="list-group-item">Bina Yaşı<b class="ml-5">@item.AgeOfBuilding</b></li>
+            <li class="list-group-item">Bulunduğu Kat<b class="ml-5">@item.NumberOfFloors</b></li>
+            <li class="list-group-item">Isıtma<b class="ml-5" style="text-transform: capitalize;">@item.Heating.ToLower()</b></li>
+            <li class="list-group-item">Banyo Sayısı<b class="ml-5">@item.NumberOfBathrooms</b></li>
+            <li class="list-group-item">Balkon<b class="ml-5">@(item.Balcony  ? "Var" : "Yok")</b></li>
+            <li class="list-group-item">Asansör<b class="ml-5">@(item.Elevator ? "Var" : "Yok")</b></li>
+            <li class="list-group-item">Otopark<b class="ml-5" style="text-transform: capitalize;">@item.ParkingArea.ToLower()</b></li>
+            <li class="list-group-item">Aidat(TL)<b class="ml-5">@item.Dues</b></li>
+            <li class="list-group-item">Kimden<b class="ml-5" style="text-transform: capitalize;">@item.ContentFrom.ToLower()</b></li>
+            </ul>
+            @if (item.ContentOwnerID != Convert.ToInt32(ViewContext.HttpContext.Request.Cookies["MANREF"]))
+            {
+                <a href="/AccountSummary/AccountMessage/MessageDetail/@item.ID/@item.ContentOwnerID" class="btn btnCategory btn-primary">Mesaj Gönder</a>
+            }
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="carousel-inner description">
+            <div class="carousel-item active">
+                <div class="card mb-4 border-4">
+                    <div class="card-body text-center">
+                            <h5 class="card-title text-start">Açıklama</h5>
+                            <hr />
+                            <p class="card-text fs-4">@item.Description</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

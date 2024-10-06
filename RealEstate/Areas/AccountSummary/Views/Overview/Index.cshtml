@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model RealEstate.Areas.AccountSummary.Models.UserEditViewModel
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Name">Kullanıcı Adı</label>
+                            <input asp-for="Name" class="form-control" id="name" name="name" placeholder="@ViewBag.v1">
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Surname">Ad Soyad</label>
+                            <input asp-for="Surname" class="form-control" id="surname" name="surname" placeholder="@ViewBag.v2">
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="OldPassword">Eski Parola</label>
+                            <input asp-for="OldPassword" class="form-control" id="OldPassword" name="OldPassword" placeholder="********">
+                            <span asp-validation-for="OldPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="NewPassword">Yeni Parola</label>
+                            <input asp-for="NewPassword" class="form-control" id="NewPassword" name="NewPassword" placeholder="********">
+                            <span asp-validation-for="NewPassword" class="text-danger"></span>
+                        </div>
+                        <button type="button" class="btn btn-primary float-right" onclick="updateAccountInfo()">Güncelle</button>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ProfilePicture" style="cursor: pointer;">
+                            <div style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 20px auto;">
+                                <img id="profileImage" src="https://via.placeholder.com/150" alt="Profil Resmi" style="width: 100%; height: 100%; object-fit: cover;">
+                                <input type="file" name="ProfilePicture" class="form-control-file" id="ProfilePicture" style="display: none;">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
+        </div>
+    </div>
+  <div class="row">
+      <div class="col-md-8">@await Component.InvokeAsync("FeaturedFavoritesList")</div>
+       <div class="col-md-4">@await Component.InvokeAsync("FeatureStatisticsList")</div>
+  </div>
+ 
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<script>
+    function updateAccountInfo() {
+        var name = $('#name').val();
+        var surname = $('#surname').val();
+        var oldPassword = $('#OldPassword').val();
+        var newPassword = $('#NewPassword').val();
+        var profilePicture = $("#ProfilePicture")[0].files[0];
+
+        if (!name) {
+            alert("Kullanıcı adı boş olamaz.");
+            return;
+        }
+        if (!surname) {
+            alert("Ad soyad boş olamaz.");
+            return;
+        }
+        if (!oldPassword) {
+            alert("Eski parola boş olamaz.");
+            return;
+        }
+        if (!newPassword) {
+            alert("Yeni parola boş olamaz.");
+            return;
+        }
+
+        var formData = new FormData();
+        formData.append("Name", name);
+        formData.append("Surname", surname);
+        formData.append("OldPassword", oldPassword);
+        formData.append("NewPassword", newPassword);
+        formData.append("ProfilePicture", profilePicture);
+
+        $.ajax({
+            url: '/AccountSummary/Overview/Index',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                console.log(data);
+                $("#profileImage").attr("src", data.imageUrl);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+</script>

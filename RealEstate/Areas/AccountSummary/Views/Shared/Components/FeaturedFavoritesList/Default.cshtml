@@ -1,0 +1,32 @@
+﻿@model List<RealEstate.ViewModels.ContentViewModel>
+<div class="col-md-offset-1 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Favori İlanlarım</h4>
+            <div class="list-wrapper pt-2">
+                <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <div style="display: flex; align-items: center;">
+                                        <img src="@item.firmDocs.ToList().Select(x => x.URL).FirstOrDefault()" alt="Resim" style="max-width: 100px; margin-right: 10px;">
+                                        <div>
+                                            @item.Title<br />
+                                            <a href="/Home/GetAdDetail/@item.ID">
+                                                @(
+                                                    item.Description.Length > 20 ? item.Description.Substring(0, 20) + "..." : item.Description
+                                                    )
+                                            </a>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

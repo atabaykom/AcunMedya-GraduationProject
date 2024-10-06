@@ -1,0 +1,122 @@
+﻿@model List<RealEstate.Areas.AccountSummary.Models.MessageViewModel>
+@{
+    ViewData["asd"] = "asd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #f4f7f6;
+        margin-top: 150px;
+    }
+
+    .message-box {
+        max-height: 400px; /* Mesaj kutusunun maksimum yüksekliği */
+        overflow-y: auto; /* Dikey scroll çubuğunu aktif et */
+        border: 1px solid #ccc; /* Kenar çizgisi */
+        border-radius: 5px; /* Kenar yuvarlaklığı */
+        padding: 10px; /* İç içe boşluk */
+        overflow-y: hidden;
+    }
+
+    .message {
+        position: relative;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+
+
+    .message img {
+        max-width: 100px;
+        margin-right: 20px; /* Resim ile mesaj arasındaki boşluk arttırıldı */
+        margin-bottom: 20px;
+    }
+
+    .message:last-child {
+        border-bottom: none; /* Son mesajın alt kenar çizgisini kaldır */
+    }
+
+    .message-link {
+        text-decoration: none; /* Linklerin alt çizgisini kaldır */
+        color: inherit; /* Mevcut metin rengini kullan */
+    }
+
+    .row > * {
+        flex-shrink: 0;
+        width: 70%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+    }
+
+    .message-content {
+        font-size: 14px; /* İçerik yazı boyutu düşürüldü */
+        margin-bottom: 5px;
+        margin-left: 20px;
+        flex-grow: 1; /* İçerik alanının genişlemesini sağlar */
+    }
+
+    .message-sender {
+        font-size: 14px; /* Gönderen adı yazı boyutu düşürüldü */
+        margin-bottom: 5px;
+        margin-left: 20px;
+        margin-top: -10px; /* Gönderen adını yukarı çek */
+        flex-grow: 1; /* İçerik alanının genişlemesini sağlar */
+    }
+    .message-date {
+        margin-left: 430px;
+        font-size: 13px;
+       
+    }
+
+</style>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-offset-1">
+            <div class="card">
+                <div class="card-body message-box">
+                    <h4 class="card-title">Mesajlarım</h4>
+                    <div class="list-wrapper pt-2">
+                        <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                            @foreach (var item in Model)
+                            {
+                                <li class="message">
+                                    <div class="form-check form-check-flat">
+                                        <label class="form-check-label">
+                                            <div style="display: flex; align-items: center;">
+                                                <img src="https://i0.shbdn.com/photos/30/27/42/x5_1152302742nsg.jpg" alt="Resim" style="max-width: 100px; margin-right: 10px;">
+                                                <div class="lead">
+                                                    <span class="message-date">@item.Date.ToShortDateString()</span><br />
+                                                    <span class="message-sender">@item.SenderName</span><br />
+                                                    <span class="message-content">
+                                                        <a href="/AccountSummary/AccountMessage/MessageDetail/@item.ID/@(item.SenderUserID == Convert.ToInt32(ViewContext.HttpContext.Request.Cookies["MANREF"]) ? item.ReceiverUserID : item.SenderUserID)" class="message-link">
+                                                            @(
+                                                                item.Content.Length > 20 ? item.Content.Substring(0, 20) + "..." : item.Content
+                                                                )
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

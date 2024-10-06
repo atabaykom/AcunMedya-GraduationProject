@@ -1,0 +1,87 @@
+﻿@model List<RealEstate.Areas.AccountSummary.Models.MessageViewModel>
+@{
+    ViewData["Index"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .strike-text {
+        color: red;
+        text-decoration: line-through
+    }
+
+    .product-image {
+        width: 100%
+    }
+
+    .dot {
+        height: 7px;
+        width: 7px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 3px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block
+    }
+
+    .spec-1 {
+        color: #938787;
+        font-size: 15px
+    }
+
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-offset-1 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Favori İlanlarım</h4>
+                    <div class="list-wrapper pt-2">
+                        <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                            @foreach (var item in Model)
+                            {
+                                <li>
+                                    <div class="form-check form-check-flat">
+                                        <label class="form-check-label">
+                                            <div style="display: flex; align-items: center;">
+                                                <img src="" alt="Resim" style="max-width: 100px; margin-right: 10px;">
+                                                <div>
+                                                    @item.SenderName<br />
+                                                    <a href="/Home/GetAdDetail/@item.ID">
+                                                        @(
+                                                            item.Content.Length > 20 ? item.Content.Substring(0, 20) + "..." : item.Content
+                                                          )
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+

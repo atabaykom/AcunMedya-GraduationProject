@@ -1,0 +1,135 @@
+﻿@using RealEstate.Areas.Admin.ViewModels
+@model AdminUserViewModel
+@{
+    ViewData["Title"] = "GetAllUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+<div class="card" style="margin-top: 200px;">
+    <div class="card-header border-0">
+        <h3 class="mb-0">Uye Listesi</h3>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" class="sort" data-sort="id">#</th>
+                    <th scope="col" class="sort" data-sort="title">Adı</th>
+                    <th scope="col" class="sort" data-sort="value">Soyadı</th>
+                    <th scope="col" class="sort" data-sort="value">Kullanıcı Adı</th>
+                    <th scope="col" class="sort" data-sort="delete">Email</th>
+                    <th scope="col" class="sort" data-sort="edit">Telefon Numarası</th>
+                    <th scope="col" class="sort" data-sort="edit">Resim</th>
+                    <th scope="col" class="sort" data-sort="edit">İşlem</th>
+                    <th scope="" class="" data-sort="edit">Rol</th>
+                    <th scope="" class="" data-sort="edit"></th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                    @foreach (var user in Model.Users)
+                    {
+                                    <tr>
+                                        <th scope="row">@user.Id</th>
+                                        <td>@user.</td>
+                                        <td>@user.Surname</td>
+                                        <td>@user.UserName</td>
+                                        <td>@user.Email</td>
+                                        <td>@user.PhoneNumber</td>
+                                        <td><img src="@user.IMGURL" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;" alt="User Image"></td>
+                                        @if(user.IsActive==true){
+                                        <td> <a href="/Admin/Home/DeleteUser/@user.Id" class="btn btn-danger">Üyeyi Kaldır</a></td>
+                                        }else{
+                                        <td> <a href="/Admin/Home/SetActiveUser/@user.Id" class="btn btn-success">Üyeyi Aktif Et</a></td>
+                                        }
+                                        <td>
+                                        <select class="form-control role-select" id="roleSelect_@user.Id" data-user-id="@user.Id">
+                                            <option value="">Rol Seçiniz</option>
+                                            @foreach (var role in ViewBag.Roles)
+                                            {
+                                                var selected = Model.Roles.Any(ur => ur.Id == role.Id) ? "selected" : "";
+                                                <option value="@role.Id" @selected>@role.Name</option>
+                                            }
+                                        </select>
+                                    <td>
+                                        <button onclick="AssignUserRole('@user.Id')" class="btn btn-primary assign-role-btn">Rol Ata</button>
+                                    </td>
+
+                                    </tr>
+                    }
+                
+            </tbody>
+        </table>
+        <a class="btn btn-primary float-right" href="/Admin/Home/Index">Geri</a>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<script>
+  @*   $(document).ready(function () {
+        GetRoleList();
+        $(".role-select").each(function () {
+            var userId = $(this).data("user-id");
+            var roleId = $(this).data("user-role-id");
+            if (!roleId) {
+                $(this).append('<option value="" selected>Rol Seçiniz</option>');
+            } else {
+                $(this).val(roleId);
+            }
+        });
+
+        $(".assign-role-btn").click(function () {
+            var userId = $(this).data("user-id");
+            var roleId = $("#roleSelect_" + userId).val();
+            if (!roleId) {
+                alert("Lütfen bir rol seçiniz.");
+                return;
+            }
+            AssignUserRole(userId, roleId);
+        });
+    }); *@
+    GetRoleList();
+    function AssignUserRole(userId) {
+        var roleId = $("#roleSelect_" + userId).val();
+        debugger;
+        $.ajax({
+            url: "/Admin/Home/AddUserRole",
+            type: "POST",
+            data: {
+                userID: userId,
+                roleID: roleId
+            },
+            success: function () {
+                console.log("Rol başarıyla atandı.");
+            },
+            error: function (jqXHR, textStatus, errorMessage) {
+                console.error("Hata:", errorMessage);
+            }
+        });
+    }
+
+    function GetRoleList() {
+        $.ajax({
+            url: "/Admin/Home/GetRoles", 
+            type: "GET",
+            success: function (data) {
+            },
+            error: function (jqXHR, textStatus, errorMessage) {
+                console.error("Rol listesi alınamadı:", errorMessage);
+            }
+        });
+    }
+
+</script>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

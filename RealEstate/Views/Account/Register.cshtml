@@ -1,0 +1,86 @@
+﻿@model UserCreateViewModel
+@{ Layout = null;
+} 
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="~/dash/vendors/feather/feather.css">
+<link rel="stylesheet" href="~/dash/vendors/ti-icons/css/themify-icons.css">
+<link rel="stylesheet" href="~/dash/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="~/dash/css/vertical-layout-light/style.css">
+<body>
+  <div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <img src="~/dash/images/logo.svg" alt="logo">
+              </div>
+              <h6 class="font-weight-light">Devam etmek icin giris yapin.</h6>
+              <form id="userForm">
+                <div class="mb-3">
+                  <label>Name</label>
+                  <input id="Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label>Surname</label>
+                  <input id="Surname" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label>UserName</label>
+                  <input id="UserName" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label>Email</label>
+                  <input id="Email" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label>Password</label>
+                  <input id="Password" class="form-control">
+                </div>
+                <div class="mb-3">
+                  <label>ConfirmPassword</label>
+                  <input id="ConfirmPassword" class="form-control">
+                </div>
+                <div class="g-recaptcha" data-sitekey="6Le2P34pAAAAAL0WLM3reSu6CI-c4x-av4Gr2cV8"></div>
+                <button type="submit" class="btn btn-primary">Yeni Kullanıcı Kaydet</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script>
+  $('#userForm').submit(function(e) {
+    e.preventDefault();
+    const reCaptchaResponse = grecaptcha.getResponse();
+    var model = {
+      Name: $('#Name').val(),
+      Surname: $('#Surname').val(),
+      UserName: $('#UserName').val(),
+      FullName: $('#FullName').val(),
+      Email: $('#Email').val(),
+      Password: $('#Password').val(),
+      ConfirmPassword: $('#ConfirmPassword').val(),
+      ReCaptchaResponse: reCaptchaResponse
+    };
+    $.ajax({
+      url: '/Base/Register',
+      type: 'POST',
+      data: model,
+      success: function(data) {
+        if (confirm(data + "Do u want to continue?")) {
+          window.location.href = "/"
+        }
+      },
+      error: function(error) {
+        alert(error.responseText)
+      }
+    });
+  });
+</script>

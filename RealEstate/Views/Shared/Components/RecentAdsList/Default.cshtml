@@ -1,0 +1,31 @@
+﻿@model List<ContentViewModel>
+
+<div class="fh5co-cards">
+	<div class="container-fluid">
+		<div class="row animate-box">
+			<div class="col-md-12 heading text-center"><h2>Son Eklenen İlanlar</h2></div>
+		</div>
+		<style>
+			.img-responsive {
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
+		<div class="row">
+			@foreach (var item in Model)
+			{
+				
+					<div class="col-lg-3 col-md-6 col-sm-6 animate-box">
+						<a class="fh5co-card" href="/Home/GetAdDetail/@item.ID">
+						<img src="@item.firmDocs.ToList().Select(x=>x.URL).FirstOrDefault()" class="img-responsive img">
+							@* 	<img src="images/img_large_1.jpg" class="img-responsive"> *@
+						<div class="fh5co-card-body">
+							<h3>@item.Title</h3>
+							<p>@item.Description.</p>
+						</div>
+					</a>
+				</div>
+			}
+		</div>
+	</div>
+</div>

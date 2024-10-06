@@ -1,0 +1,54 @@
+﻿@model List<AppRole>
+@using EntityLayer.Concrete
+@{
+    ViewData["Title"] = "GetAllRole";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card" style="margin-top: 200px;">
+                <div class="card-header border-0 ">
+                    <h3 class="mb-0">Rol Listesi</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="id">#</th>
+                                <th scope="col" class="sort" data-sort="title">Adı</th>
+                                <th>İşlemler</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td>@item.Name</td>
+                                    <td> <a href="/Admin/Home/DeleteRole/@item.Id" class="btn btn-danger">Rolu Kaldır</a></td>
+                                    <td> <a href="/Admin/Home/UpdateRole/@item.Id" class="btn btn-success">Rolu Duzenle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary float-right" href="/Admin/Home/Index">Geri</a>
+                    <a class="btn btn-primary float-right" href="/Admin/Home/AddNewRole">Yeni Rol Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

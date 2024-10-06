@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concrete.ContentCategory
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card" style="margin-top: 200px;">
+                <div class="card-body">
+                    <h4 class="card-title">Kategori Güncelleme</h4>
+                    <form id="updateCategoryForm">
+                        <input id="id" name="id" type="hidden" value="@Model.CATEGORYID" />
+                        <div class="form-group row">
+                            <label for="CATNAME" class="col-sm-3 col-form-label">Kategori Adı</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="CATNAME" name="CATNAME" value="@Model.CATNAME" placeholder="Kategori Adı">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button class="btn btn-primary" type="button" onclick="updateCategory()">Kaydet</button>
+                                <a class="btn btn-primary" href="/Admin/Home/GetAllCategories">Geri</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateCategory() {
+        var model = {
+            CATNAME: $('#CATNAME').val(),
+            CATEGORYID: $('#id').val(),
+        };
+
+        $.ajax({
+            url: '/Admin/Home/UpdateCategoryName',
+            type: 'POST',
+            data: model,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

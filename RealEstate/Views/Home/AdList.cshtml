@@ -1,0 +1,483 @@
+﻿@model List<BusinessLayer.Concrete.ContentFirmdocManager.ContentFirmDocViewModel>
+@{
+    ViewData["Title"] = "AccountAdList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .strike-text {
+        color: red;
+        text-decoration: line-through
+    }
+
+    .product-image {
+        width: 100%
+    }
+
+    .dot {
+        height: 7px;
+        width: 7px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 3px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block
+    }
+
+    .spec-1 {
+        color: #938787;
+        font-size: 15px
+    }
+
+</style>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <form action="@Url.Action("AdList", "Home")" method="post" id="filterForm">
+                <div class="form-group">
+                    <label for="Country">Ülke</label>
+                    <input type="text" id="Country" name="Country" class="form-control" readonly value="Turkiye">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select name="City" id="City" class="form-control" placeholder="İl Seçin...">
+                                <option value="" disabled selected>İl Seçin...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select name="Town" id="Town" class="form-control" disabled="disabled" placeholder="İlçe Seçin...">
+                                <option value="" disabled selected>İlçe Seçin...</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="ContentType">İlan Türü</label>
+                    <select class="form-control" name="ContentType" id="ContentType">
+                        <option value="">Seçiniz...</option>
+                        <option value="SATILIK">Satılık</option>
+                        <option value="KIRALIK">Kiralık</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priceMin">Fiyat Min:</label>
+                    <input type="number" id="priceMin" name="priceMin" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="priceMax">Fiyat Max:</label>
+                    <input type="number" id="priceMax" name="priceMax" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="minm2">Min m²:</label>
+                    <input type="number" id="minm2" name="minm2" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="maxm2">Max m²:</label>
+                    <input type="number" id="maxm2" name="maxm2" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="NumberOfRooms">Oda Sayısı</label>
+                    <select class="form-control" name="NumberOfRooms" id="NumberOfRooms">
+                        <option value="">Seçiniz...</option>
+                        <option value="Studyo(1+0)">Studyo(1+0)</option>
+                        <option value="1+1">1+1</option>
+                        <option value="2+0">2+0</option>
+                        <option value="2+1">2+1</option>
+                        <option value="2+2">2+2</option>
+                        <option value="3+0">3+0</option>
+                        <option value="3+1">3+1</option>
+                        <option value="3+2">3+2</option>
+                        <option value="3+3">3+3</option>
+                        <option value="4+0">4+0</option>
+                        <option value="4+1">4+1</option>
+                        <option value="4+2">4+2</option>
+                        <option value="4+3">4+3</option>
+                        <option value="4+4">4+4</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="AgeOfBuilding">Bina Yaşı</label>
+                    <select class="form-control" name="AgeOfBuilding" id="AgeOfBuilding">
+                        <option value="">Seçiniz...</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">5+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="FloorNumber">Bulunduğu Kat</label>
+                    <select class="form-control" name="FloorNumber" id="FloorNumber">
+                        <option value="">Seçiniz...</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">5+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="NumberOfFloors">Kat Sayısı</label>
+                    <select class="form-control" name="NumberOfFloors" id="NumberOfFloors">
+                        <option value="">Seçiniz...</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">5+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Heating">Isıtma</label>
+                    <select class="form-control" name="Heating" id="Heating">
+                        <option value="">Seçiniz...</option>
+                        <option value="DOGALGAZ">Doğalgaz</option>
+                        <option value="SOMINE">Şömine</option>
+                        <option value="GUNES ENERJISI">Güneş Enerjisi</option>
+                        <option value="YERDEN ISITMA">Yerden Isıtma</option>
+                        <option value="SOBA">Soba</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="NumberOfBathrooms">Banyo Sayısı</label>
+                    <select class="form-control" name="NumberOfBathrooms" id="NumberOfBathrooms">
+                        <option value="">Seçiniz...</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="10">5+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Balcony">Balkon</label>
+                    <select class="form-control" name="Balcony" id="Balcony">
+                        <option value="">Seçiniz...</option>
+                        <option value="true">Var</option>
+                        <option value="false">Yok</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Elevator">Asansör</label>
+                    <select class="form-control" name="Elevator" id="Elevator">
+                        <option value="">Seçiniz...</option>
+                        <option value="true">Var</option>
+                        <option value="false">Yok</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ParkingArea">Otopark</label>
+                    <select class="form-control" name="ParkingArea" id="ParkingArea">
+                        <option value="">Seçiniz...</option>
+                        <option value="ACIK OTOPARK">Açık Otopark</option>
+                        <option value="KAPALI OTOPARK">Kapalı Otopark</option>
+                        <option value="YOK">Yok</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="maxDues">Max Aidat</label>
+                    <input type="number" id="maxDues" name="maxDues" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="minDues">Min Aidat</label>
+                    <input type="number" id="minDues" name="minDues" class="form-control">
+                    <span class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ContentFrom">Kimden</label>
+                    <select class="form-control" name="ContentFrom" id="ContentFrom">
+                        <option value="">Seçiniz...</option>
+                        <option value="SAHIBINDEN">Sahibinden</option>
+                        <option value="EMLAK OFISI">Emlak Ofisinden</option>
+                        <option value="INSAAT FIRMASI">İnsaat Firmasından</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Exchangeable">Takas</label>
+                    <select class="form-control" name="Exchangeable" id="Exchangeable">
+                        <option value="">Seçiniz...</option>
+                        <option value="true">Evet</option>
+                        <option value="false">Hayır</option>
+                    </select>
+                </div>
+           
+                <button onclick="getfilter(event)" class="btn btn-primary">ARA</button>
+                <button onclick="resetFilter(event)" class="btn btn-danger">Filtreleri Sıfırla</button>
+            </form>
+        </div>
+        <div class="col-md-7 offset-md-2" id="content">
+            @foreach (var item in Model)
+            {
+                <div class="row p-2 bg-white border rounded mt-4">
+                    <div class="col-md-3 mt-1">
+                        <img src="@item.URL" class="d-block w-100">
+                    </div>
+                    <div class="col-md-7">
+                        <h3>@item.Content.Title</h3>
+                        <p class="fw-semibold mt-4 text-truncate" style="white-space: pre-wrap;">@item.Content.Description</p>
+                        <ul class="d-flex align-items-end " style="list-style-type: none; padding-left: 0;">
+                            <li class="mt-5">
+                                <div class="mdi mdi-seat-individual-suite " style="font-size: 15px;"><span class="p-1">Oda Sayısı <b>@item.Content.NumberOfRooms</b></span></div>
+                            </li>
+                            <li class="mt-5">
+                                <div class="mdi mdi-account-card-details" style="font-size: 15px;"><span class="p-1">Kimden <b>@item.Content.ContentFrom</b></span></div>
+                            </li>
+                            <li class="mt-5">
+                                <div class="mdi mdi-home" style="font-size: 15px;"><span class="p-1">Bina Yaşı <b>@item.Content.AgeOfBuilding</b></span></div>
+                            </li>
+                            <li class="mt-5">
+                                <div class="mdi mdi-vector-square " style="font-size: 15px;"><span class="p-1">Net M2 <b>@item.Content.NetSquareMeters</b></span></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="align-items-center align-content-center col-md-2 border-left mt-1">
+                        <div class="d-flex flex-row align-items-center">
+                            <h4 class="mr-1">$Price</h4>
+                        </div>
+                        <h6 class="text-success">@item.Content.Adress</h6>
+                        <div class="d-flex flex-column mt-4">
+                            <a href="/Home/GetAdDetail/@item.Content.ID" class="btn btn-primary">Detaylar</a>
+                            @if (ViewContext.HttpContext.Request.Cookies["MANREF"] != null && item.Content.ContentOwnerID.ToString() != ViewContext.HttpContext.Request.Cookies["MANREF"])
+                            {
+                                <a href="/AccountSummary/Overview/AddFavoriteList/@item.Content.ID" class="btn btn-primary">Favoriye Ekle</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="col-md-12 mt-4">
+            <ul class="pagination justify-content-center" id="pagination">
+                <li class="page-item disabled" id="prevButton">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item" id="nextButton">
+                    <a class="page-link" href="#">İleri</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var formData = '';
+    var newUrl = '';
+    var itemsPerPage = 10; // Sayfa başına gösterilecek ilan sayısı
+    var totalItems = $('#content .row').length; // Toplam ilan sayısı
+    var totalPages = Math.ceil(totalItems / itemsPerPage); // Toplam sayfa sayısı
+
+    function loadPage(page) {
+        var startIndex = (page - 1) * itemsPerPage;
+        var endIndex = Math.min(startIndex + itemsPerPage, totalItems);
+
+        $('#content .row').hide();
+        $('#content .row').slice(startIndex, endIndex).show();
+    }
+
+    function updatePagination() {
+        $('#pagination').empty();
+
+        var prevButton = '<li class="page-item disabled" id="prevButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+        if ($('#pagination .page-item.active').find('.page-link').text() === '1') {
+            prevButton = '<li class="page-item disabled" id="prevButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Geri</a></li>';
+        }
+        $('#pagination').append(prevButton);
+
+        for (var i = 1; i <= totalPages; i++) {
+            var liClass = i === 1 ? 'page-item active' : 'page-item';
+            var li = $('<li class="' + liClass + '"><a class="page-link" href="#">' + i + '</a></li>');
+            $('#pagination').append(li);
+        }
+
+        var nextButton = '<li class="page-item disabled" id="nextButton"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+        if ($('#pagination .page-item.active').find('.page-link').text() === totalPages.toString()) {
+            nextButton = '<li class="page-item disabled" id="nextButton" style="display: none;"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">İleri</a></li>';
+        }
+        $('#pagination').append(nextButton);
+    }
+
+    $(document).ready(function () {
+        updatePagination();
+        loadPage(1);
+
+        $('#pagination').on('click', '#prevButton', function (e) {
+            e.preventDefault();
+            var currentPage = parseInt($('#pagination .page-item.active').find('.page-link').text());
+            var prevPage = currentPage - 1;
+            if (prevPage >= 1) {
+                loadPage(prevPage);
+                $('#pagination .page-item').removeClass('active');
+                $('#pagination').find('li:contains("' + prevPage + '")').addClass('active');
+            }
+        });
+
+        $('#pagination').on('click', '#nextButton', function (e) {
+            e.preventDefault();
+            var currentPage = parseInt($('#pagination .page-item.active').find('.page-link').text());
+            var nextPage = currentPage + 1;
+            if (nextPage <= totalPages) {
+                loadPage(nextPage);
+                $('#pagination .page-item').removeClass('active');
+                $('#pagination').find('li:contains("' + nextPage + '")').addClass('active');
+            }
+        });
+
+        $('#pagination').on('click', '.page-item:not(#prevButton, #nextButton) a', function (e) {
+            e.preventDefault();
+            var page = parseInt($(this).text());
+            loadPage(page);
+            $('#pagination .page-item').removeClass('active');
+            $(this).parent().addClass('active');
+        });
+
+        $('#filterForm').on('submit', function (event) {
+            event.preventDefault();
+            getfilter(event);
+        });
+
+        $('#filterForm').on('reset', function (event) {
+            event.preventDefault();
+            $(this).trigger('submit');
+        });
+    });
+
+    function getfilter(event) {
+        event.preventDefault();
+        formData = $('#filterForm').serialize();
+        var CategoryName = getUrlParameter('CategoryName');
+        debugger;
+        if (CategoryName) { 
+            formData += '&CategoryName=' + CategoryName;
+        }
+        $.ajax({
+            url: '@Url.Action("AdList", "Home")',
+            type: 'GET',
+            data: formData,
+            success: function (response) {
+                $('#content').html($(response).find('#content').html());
+                totalItems = $('#content .row').length;
+                totalPages = Math.ceil(totalItems / itemsPerPage);
+                updatePagination();
+                loadPage(1);
+                var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + formData;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+    }
+
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function resetFilter(event) {
+        event.preventDefault();
+        $('#filterForm')[0].reset();
+        window.location.href = '@Url.Action("AdList", "Home")';
+    }
+
+    $(document).ready(function () {
+        $('#priceMin, #priceMax, #minDues, #maxDues, #maxm2, #minm2').on('change', function () {
+            var value = parseInt($(this).val());
+            var maxAllowed = 10000000;
+            var minAllowed = 0;
+            if (value > maxAllowed) {
+                $(this).val(maxAllowed);
+                $(this).siblings('.text-danger').text('Değer maksimum ' + maxAllowed + ' olabilir.');
+            }
+            if (value <= 0) {
+                $(this).val(minAllowed);
+                $(this).siblings('.text-danger').text('Değer 0 dan küçük olamaz ! ');
+            }
+            else {
+                $(this).siblings('.text-danger').text('');
+            }
+        });
+    });
+
+    
+    $.getJSON("/js/il.json", function (sonuc) {
+        $.each(sonuc[2].data, function (index, value) {
+            var option = '<option value="' + value.name + '">' + value.name + '</option>';
+            $("#City").append(option);
+        });
+    });
+
+    $("#City").on("change", function () {
+        var cityName = $("#City option:selected").text();
+        $.getJSON("/js/il.json", function (sonuc1) {
+            var ilid;
+            $.each(sonuc1[2].data, function (index, value) {
+                if (value.name === cityName) {
+                    ilid = value.id;
+                }
+            });
+            console.log("İl ID:", ilid);
+            $("#Town").attr("disabled", false).html("<option value=''>Seçin..</option>");
+            $.getJSON("/js/ilce.json", function (sonuc) {
+                $.each(sonuc[2].data, function (index, value) {
+                    if (ilid == value.il_id) {
+                        var option = '<option value="' + value.name + '">' + value.name + '</option>';
+                        $("#Town").append(option);
+                    }
+                });
+            });
+        });
+    });
+
+</script>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

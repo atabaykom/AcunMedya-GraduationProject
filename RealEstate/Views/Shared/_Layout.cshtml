@@ -1,0 +1,20 @@
+﻿  @using System.Data;
+@await Html.PartialAsync("PartialViews/_PartialHeader")
+@await Html.PartialAsync("PartialViews/_PartialScript")
+<body>
+    @{
+        var currentRequest = ViewContext.HttpContext.Request;
+    }
+@*     <script>
+        if ('@(currentRequest.Cookies["MANREF"] == null ? "true" : "false")' === 'true') {
+                location.href = '@Url.Content("~/Login/Index")';
+        }
+    </script> *@
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+<footer id="fh5co-footer">
+@await Html.PartialAsync("PartialViews/_PartialFooter")
+</footer>

@@ -1,0 +1,21 @@
+﻿@{
+	Layout = "_Layout";
+}
+<body>
+	<div id="fh5co-hero" style="background-image: url(https://s1.1zoom.me/b5050/966/432690-svetik_3840x2400.jpg);">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="fh5co-hero-wrap">
+					<div class="fh5co-hero-intro">
+						<h2 class="to-animate hero-animate-1">Bir Adım Önde Olmanın Yolu, En Güncel İlanlarla!</h2>
+					</div>
+				</div><br />
+			</div> 
+		</div>
+	</div>
+	<div id="fh5co-main">
+		@await Component.InvokeAsync("RecentAdsList")
+		@await Component.InvokeAsync("CategoryList")
+	</div>
+
+</body>

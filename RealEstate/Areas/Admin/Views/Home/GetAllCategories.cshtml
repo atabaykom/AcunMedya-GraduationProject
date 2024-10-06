@@ -1,0 +1,62 @@
+﻿@model List<ContentCategory>
+@using EntityLayer.Concrete
+@{
+    ViewData["Title"] = "GetAllCategories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card" style="margin-top: 200px;">
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Kategori Listesi</h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Kategori Adı</th>
+                                <th>İşlemler</th>
+                                <th>Güncelle</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td></td>
+                                    <td>@item.CATNAME</td>
+                                    @if (item.ISACTIVE == false)
+                                    {
+                                        <td><a href="/Admin/Home/SetActiveCategory/@item.CATEGORYID" class="btn btn-success">Yayına Al</a></td>
+                                    }
+                                    else
+                                    {
+                                        <td><a href="/Admin/Home/SetPassiveCategory/@item.CATEGORYID" class="btn btn-danger">Yayından Kaldır</a></td>
+
+                                    }
+                                    <td><a href="/Admin/Home/UpdateCategoryName/@item.CATEGORYID" class="btn btn-success">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a class="btn btn-primary float-right" href="/Admin/Home/AddCategory">Yeni Kategori Ekle</a>
+                    <a class="btn btn-primary float-right" href="/Admin/Home/Index">Geri</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

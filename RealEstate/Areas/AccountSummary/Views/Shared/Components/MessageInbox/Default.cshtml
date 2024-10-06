@@ -1,0 +1,26 @@
+﻿@model List<RealEstate.Areas.AccountSummary.Models.MessageViewModel>
+<div id="plist" class="people-list">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Kişi Arayın">
+    </div>
+    <ul class="list-unstyled chat-list mt-2 mb-0">
+        @foreach (var item in Model)
+        {
+            @* <a href="/AccountSummary/AccountMessage/MessageDetail/@item.ID/@item.ReceiverUserID" style="text-decoration: none; color: inherit;"> *@
+            <a href="/AccountSummary/AccountMessage/MessageDetail/@item.ID/@(item.SenderUserID == Convert.ToInt32(ViewContext.HttpContext.Request.Cookies["MANREF"]) ? item.ReceiverUserID : item.SenderUserID)" style="text-decoration: none; color: inherit;">
+
+            <li class="clearfix" href="">
+               
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">
+                    <div class="about">
+                        <div class="name">@item.SenderName</div>
+                        <div class="status"> <i class="fa fa-circle online"></i>@(item.Content != null ? (item.Content.Length > 7 ? item.Content.Substring(0, 7) + "..." : item.Content) : "")</div>
+                    </div>
+            </li>
+            </a>
+        }
+    </ul>
+</div>

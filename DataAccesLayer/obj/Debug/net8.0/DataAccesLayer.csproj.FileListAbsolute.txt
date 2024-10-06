@@ -1,0 +1,17 @@
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\DataAccesLayer.deps.json
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\DataAccesLayer.runtimeconfig.json
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\DataAccesLayer.dll
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\DataAccesLayer.pdb
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\EntityLayer.dll
+C:\MVC\RealEstate\DataAccesLayer\bin\Debug\net8.0\EntityLayer.pdb
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.csproj.AssemblyReference.cache
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.AssemblyInfoInputs.cache
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.AssemblyInfo.cs
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.csproj.CoreCompileInputs.cache
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.csproj.CopyComplete
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.dll
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\refint\DataAccesLayer.dll
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.pdb
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\DataAccesLayer.genruntimeconfig.cache
+C:\MVC\RealEstate\DataAccesLayer\obj\Debug\net8.0\ref\DataAccesLayer.dll
