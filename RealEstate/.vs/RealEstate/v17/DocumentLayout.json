@@ -1,42 +1,39 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\",
+  "WorkspaceRootPath": "C:\\RealEstate\\RealEstate\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA0E1DE5-C9AC-46DA-9B38-D8D9791CCCF0}|..\\DataAccesLayer\\DataAccessLayer.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\dataacceslayer\\concrete\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA0E1DE5-C9AC-46DA-9B38-D8D9791CCCF0}|..\\DataAccesLayer\\DataAccessLayer.csproj|c:\\realestate\\dataacceslayer\\concrete\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0E1DE5-C9AC-46DA-9B38-D8D9791CCCF0}|..\\DataAccesLayer\\DataAccessLayer.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\dataacceslayer\\entityframework\\efoutgoingmessagesdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA0E1DE5-C9AC-46DA-9B38-D8D9791CCCF0}|..\\DataAccesLayer\\DataAccessLayer.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\dataacceslayer\\entityframework\\efnotificationdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\areas\\accountsummary\\controllers\\accountmessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\areas\\accountsummary\\controllers\\accountmessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:areas\\accountsummary\\controllers\\accountmessagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\areas\\accountsummary\\controllers\\overviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\areas\\accountsummary\\controllers\\overviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:areas\\accountsummary\\controllers\\overviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\controllers\\advertisementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\controllers\\advertisementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:controllers\\advertisementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\users\\berk\\desktop\\netcore\\realestate\\realestate\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|c:\\realestate\\realestate\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B239D2D8-AB9E-46CE-BECD-A340125D3BE7}|RealEstate.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,6 +47,12 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,106 +62,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EfOutgoingMessagesDal.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
-              "RelativeToolTip": "..\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T16:15:09.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EfNotificationDal.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
-              "RelativeToolTip": "..\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T16:15:05.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Context.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
-              "RelativeDocumentMoniker": "..\\DataAccesLayer\\Concrete\\Context.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
-              "RelativeToolTip": "..\\DataAccesLayer\\Concrete\\Context.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T16:14:54.666Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "Context.cs",
+              "DocumentMoniker": "C:\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "RelativeDocumentMoniker": "..\\DataAccesLayer\\Concrete\\Context.cs",
+              "ToolTip": "C:\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "RelativeToolTip": "..\\DataAccesLayer\\Concrete\\Context.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T17:49:18.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EfOutgoingMessagesDal.cs",
+              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
+              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfOutgoingMessagesDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T16:15:09.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EfNotificationDal.cs",
+              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
+              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfNotificationDal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T16:15:05.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Context.cs",
+              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\Concrete\\Context.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T16:14:54.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "AccountManager.cs",
               "DocumentMoniker": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
               "ToolTip": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Concrete\\AccountManager.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAAAA0AAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T12:45:41.981Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "EfAccountDal.cs",
               "DocumentMoniker": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
               "ToolTip": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\EntityFramework\\EfAccountDal.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T12:38:47.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "IAccountDal.cs",
               "DocumentMoniker": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
               "ToolTip": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\DataAccesLayer\\Abstract\\IAccountDal.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T12:38:18.628Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
+              "RelativeDocumentMoniker": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
               "ToolTip": "C:\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
+              "RelativeToolTip": "..\\..\\Users\\berk\\OneDrive\\NetCore\\RealEstate\\BusinessLayer\\Abstract\\IAccountService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T12:34:32.969Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Program.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Program.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAAACsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -166,11 +178,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AdvertisementController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\AdvertisementController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Controllers\\AdvertisementController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdvertisementController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\AdvertisementController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Controllers\\AdvertisementController.cs",
               "RelativeToolTip": "Controllers\\AdvertisementController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABnAgAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -178,11 +190,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "AccountMessageController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
               "RelativeDocumentMoniker": "Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
               "RelativeToolTip": "Areas\\AccountSummary\\Controllers\\AccountMessageController.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAewBMAAAD1AQAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -190,11 +202,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -202,24 +214,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "BaseController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\BaseController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Controllers\\BaseController.cs",
               "RelativeDocumentMoniker": "Controllers\\BaseController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Controllers\\BaseController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Controllers\\BaseController.cs",
               "RelativeToolTip": "Controllers\\BaseController.cs",
               "ViewState": "AQIAACEAAAAAAAAAAAAcwDsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T12:13:30.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-01T12:13:30.446Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "OverviewController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\OverviewController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\OverviewController.cs",
               "RelativeDocumentMoniker": "Areas\\AccountSummary\\Controllers\\OverviewController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\OverviewController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Areas\\AccountSummary\\Controllers\\OverviewController.cs",
               "RelativeToolTip": "Areas\\AccountSummary\\Controllers\\OverviewController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAvwBwAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -227,11 +238,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\RealEstate\\RealEstate\\Areas\\Admin\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\RealEstate\\RealEstate\\Areas\\Admin\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Areas\\Admin\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAIYAAAAAAAAAAAAvwJgAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

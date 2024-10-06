@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nH4WZlpg/cM=",
+  "dgSpecHash": "9OeJ9gABnD4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\RealEstate\\RealEstate.csproj",
+  "projectFilePath": "C:\\RealEstate\\RealEstate\\RealEstate.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\berk\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\berk\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

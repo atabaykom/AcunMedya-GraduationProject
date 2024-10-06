@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj": {}
+    "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\berk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\obj\\",
+        "outputPath": "C:\\RealEstate\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\berk\\AppData\\Roaming\\NuGet\\NuGet.Config",

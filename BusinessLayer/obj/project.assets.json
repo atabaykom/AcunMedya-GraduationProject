@@ -8702,11 +8702,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\BusinessLayer\\BusinessLayer.csproj",
+      "projectUniqueName": "C:\\RealEstate\\BusinessLayer\\BusinessLayer.csproj",
       "projectName": "BusinessLayer",
-      "projectPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\BusinessLayer\\BusinessLayer.csproj",
+      "projectPath": "C:\\RealEstate\\BusinessLayer\\BusinessLayer.csproj",
       "packagesPath": "C:\\Users\\berk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\BusinessLayer\\obj\\",
+      "outputPath": "C:\\RealEstate\\BusinessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\berk\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8724,11 +8724,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\DataAccesLayer\\DataAccessLayer.csproj"
+            "C:\\RealEstate\\DataAccesLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\RealEstate\\DataAccesLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj": {
-              "projectPath": "C:\\Users\\berk\\Desktop\\NetCore\\RealEstate\\EntityLayer\\EntityLayer.csproj"
+            "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj": {
+              "projectPath": "C:\\RealEstate\\EntityLayer\\EntityLayer.csproj"
             }
           }
         }
